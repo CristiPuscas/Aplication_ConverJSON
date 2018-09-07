@@ -56,7 +56,13 @@ public function createEntityForArray($id,$type){
         }
         array_push($all,$elem);
     }
-    return $all;
+    if ($all!=NULL) {
+        return $all;
+    }
+    else{
+        $arr=new Competences();
+        return $arr;
+    }
 }
 
 
@@ -81,7 +87,12 @@ public function checkType($id,$type){
     }else{
         $result=$this->get_cc_hc($id);
     }
-    return $result;
+//    if ($result!=NULL) {
+        return $result;
+//    }
+//    else{
+//        die("User-ul cu id-ul"." ".$id." nu exista in tabelul"." ".$type);
+//    }
 }
 }
 
